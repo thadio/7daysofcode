@@ -1,1 +1,116 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Interativo: Escolha sua Carreira</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        button {
+            background-color: #ffffff;
+            color: #5b86e5;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #5b86e5;
+            color: white;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jogo Interativo: Escolha sua Carreira</h1>
+        <p>Clique no botão abaixo para começar sua jornada</p>
+    </header>
+
+    <div class="button-container">
+        <button onclick="iniciarJogo()">Iniciar Jogo</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome | Desenvolvido com HTML e JavaScript</p>
+    </footer>
+
+    <script>
+        function iniciarJogo() {
+            // Parte 1: Escolha inicial
+            const area = prompt("Você quer seguir para a área de Front-End ou seguir para a área de Back-End? Responda com 'Front-End' ou 'Back-End'.");
+
+            // Parte 2: Escolha da tecnologia
+            let tecnologia;
+            if (area === "Front-End") {
+                tecnologia = prompt("Você quer aprender React ou aprender Vue? Responda com 'React' ou 'Vue'.");
+            } else if (area === "Back-End") {
+                tecnologia = prompt("Você quer aprender C# ou aprender Java? Responda com 'C#' ou 'Java'.");
+            } else {
+                alert("Área não reconhecida. Por favor, recarregue a página e tente novamente.");
+                return;
+            }
+
+            // Parte 3: Escolha de especialização ou Fullstack
+            const caminho = prompt(`Você quer seguir se especializando na área de ${area} ou seguir se desenvolvendo para se tornar Fullstack? Responda com 'Especializar' ou 'Fullstack'.`);
+
+            if (caminho === "Especializar") {
+                alert(`Ótima escolha! Continue se aprofundando em ${tecnologia} e se torne um especialista na área de ${area}!`);
+            } else if (caminho === "Fullstack") {
+                alert("Fantástico! Expandir seus conhecimentos para se tornar Fullstack abrirá muitas portas!");
+            } else {
+                alert("Escolha não reconhecida. Por favor, recarregue a página e tente novamente.");
+                return;
+            }
+
+            // Parte 4: Tecnologias adicionais
+            let maisTecnologias = true;
+            while (maisTecnologias) {
+                const novaTecnologia = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite o nome da tecnologia ou cancele para parar.");
+                if (novaTecnologia) {
+                    alert(`Interessante! ${novaTecnologia} é uma ótima tecnologia para aprender.`);
+                } else {
+                    maisTecnologias = false;
+                    alert("Obrigado por compartilhar suas preferências! Boa sorte em sua jornada de aprendizado!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
