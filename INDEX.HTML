@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes de Comparação JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+        }
+        .button-container {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:active {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testes de Comparação em JavaScript</h1>
+    <p>Clique em um botão abaixo para executar um teste de comparação!</p>
+
+    <div class="button-container">
+        <button onclick="teste1()">Teste 1: numeroUm vs stringUm</button>
+        <button onclick="teste2()">Teste 2: numeroTrinta vs stringTrinta</button>
+        <button onclick="teste3()">Teste 3: numeroDez vs stringDez</button>
+    </div>
+
+    <script>
+        function teste1() {
+            let numeroUm = 1;
+            let stringUm = '1';
+            if (numeroUm == stringUm && numeroUm !== stringUm) {
+                alert('As variáveis numeroUm e stringUm têm o mesmo valor, mas tipos diferentes');
+            } else {
+                alert('As variáveis numeroUm e stringUm não têm o mesmo valor');
+            }
+        }
+
+        function teste2() {
+            let numeroTrinta = 30;
+            let stringTrinta = '30';
+            if (numeroTrinta === stringTrinta) {
+                alert('As variáveis numeroTrinta e stringTrinta têm o mesmo valor e mesmo tipo');
+            } else {
+                alert('As variáveis numeroTrinta e stringTrinta não têm o mesmo tipo');
+            }
+        }
+
+        function teste3() {
+            let numeroDez = 10;
+            let stringDez = '10';
+            if (numeroDez == stringDez && numeroDez !== stringDez) {
+                alert('As variáveis numeroDez e stringDez têm o mesmo valor, mas tipos diferentes');
+            } else {
+                alert('As variáveis numeroDez e stringDez não têm o mesmo valor');
+            }
+        }
+    </script>
+</body>
+</html>
