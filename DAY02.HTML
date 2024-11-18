@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interatividade com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        button {
+            background-color: #ffffff;
+            color: #ff7e5f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #ff7e5f;
+            color: white;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interatividade com JavaScript</h1>
+        <p>Clique no botão abaixo para começar a interação</p>
+    </header>
+
+    <div class="button-container">
+        <button onclick="iniciarPrograma()">Iniciar</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome | Desenvolvido com HTML e JavaScript</p>
+    </footer>
+
+    <script>
+        function iniciarPrograma() {
+            // Perguntas iniciais
+            const nome = prompt("Qual o seu nome?");
+            const idade = prompt("Quantos anos você tem?");
+            const linguagem = prompt("Qual linguagem de programação você está estudando?");
+
+            // Mensagem inicial
+            alert(`Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!`);
+
+            // Exercício opcional
+            const gostaDeEstudar = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 para SIM ou 2 para NÃO.`);
+
+            // Condicionais para a resposta
+            if (gostaDeEstudar == 1) {
+                alert("Muito bom! Continue estudando e você terá muito sucesso.");
+            } else if (gostaDeEstudar == 2) {
+                alert("Ahh que pena... Já tentou aprender outras linguagens?");
+            } else {
+                alert("Resposta inválida. Por favor, insira 1 para SIM ou 2 para NÃO.");
+            }
+        }
+    </script>
+</body>
+</html>
 
