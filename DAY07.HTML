@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        button {
+            background-color: #ffffff;
+            color: #0072ff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #0072ff;
+            color: white;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora Interativa</h1>
+        <p>Escolha uma operação e veja o resultado!</p>
+    </header>
+
+    <div class="button-container">
+        <button onclick="calculadora()">Iniciar Calculadora</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome | Desenvolvido com HTML e JavaScript</p>
+    </footer>
+
+    <script>
+        // Funções para as operações
+        function soma(a, b) {
+            return a + b;
+        }
+
+        function subtracao(a, b) {
+            return a - b;
+        }
+
+        function multiplicacao(a, b) {
+            return a * b;
+        }
+
+        function divisao(a, b) {
+            if (b === 0) {
+                return "Erro: Divisão por zero não é permitida.";
+            }
+            return a / b;
+        }
+
+        // Função principal
+        function calculadora() {
+            let continuar = true;
+
+            while (continuar) {
+                // Exibe o menu
+                const operacao = prompt(
+                    "Escolha uma operação:\n" +
+                    "1 - Soma\n" +
+                    "2 - Subtração\n" +
+                    "3 - Multiplicação\n" +
+                    "4 - Divisão\n" +
+                    "5 - Sair"
+                );
+
+                // Verifica a opção escolhida
+                switch (operacao) {
+                    case "1": {
+                        const num1 = parseFloat(prompt("Digite o primeiro número:"));
+                        const num2 = parseFloat(prompt("Digite o segundo número:"));
+                        alert(`Resultado: ${soma(num1, num2)}`);
+                        break;
+                    }
+                    case "2": {
+                        const num1 = parseFloat(prompt("Digite o primeiro número:"));
+                        const num2 = parseFloat(prompt("Digite o segundo número:"));
+                        alert(`Resultado: ${subtracao(num1, num2)}`);
+                        break;
+                    }
+                    case "3": {
+                        const num1 = parseFloat(prompt("Digite o primeiro número:"));
+                        const num2 = parseFloat(prompt("Digite o segundo número:"));
+                        alert(`Resultado: ${multiplicacao(num1, num2)}`);
+                        break;
+                    }
+                    case "4": {
+                        const num1 = parseFloat(prompt("Digite o primeiro número:"));
+                        const num2 = parseFloat(prompt("Digite o segundo número:"));
+                        alert(`Resultado: ${divisao(num1, num2)}`);
+                        break;
+                    }
+                    case "5":
+                        alert("Até a próxima!");
+                        continuar = false;
+                        break;
+                    default:
+                        alert("Opção inválida. Por favor, escolha uma operação válida.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
 
