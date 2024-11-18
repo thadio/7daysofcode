@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        button {
+            background-color: #ffffff;
+            color: #185a9d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #185a9d;
+            color: white;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista de Compras Interativa</h1>
+        <p>Adicione itens e veja sua lista organizada por categoria!</p>
+    </header>
+
+    <div class="button-container">
+        <button onclick="gerenciarLista()">Iniciar Lista</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome | Desenvolvido com HTML e JavaScript</p>
+    </footer>
+
+    <script>
+        function gerenciarLista() {
+            // Inicializando categorias
+            const listaDeCompras = {
+                Frutas: [],
+                Laticínios: [],
+                Congelados: [],
+                Doces: [],
+                Outros: []
+            };
+
+            // Loop principal para adicionar itens
+            let adicionarMais = true;
+
+            while (adicionarMais) {
+                const desejaAdicionar = prompt("Você deseja adicionar uma comida na sua lista de compras? Responda com 'sim' ou 'não'.").toLowerCase();
+
+                if (desejaAdicionar === "sim") {
+                    const comida = prompt("Qual comida você deseja adicionar?");
+                    const categoria = prompt("Em qual categoria essa comida se encaixa? Escolha entre: 'Frutas', 'Laticínios', 'Congelados', 'Doces' ou 'Outros'.").toLowerCase();
+
+                    // Adicionando o item na categoria correspondente
+                    if (categoria === "frutas") {
+                        listaDeCompras.Frutas.push(comida);
+                    } else if (categoria === "laticínios") {
+                        listaDeCompras.Laticínios.push(comida);
+                    } else if (categoria === "congelados") {
+                        listaDeCompras.Congelados.push(comida);
+                    } else if (categoria === "doces") {
+                        listaDeCompras.Doces.push(comida);
+                    } else {
+                        listaDeCompras.Outros.push(comida);
+                    }
+                } else if (desejaAdicionar === "não") {
+                    adicionarMais = false;
+                } else {
+                    alert("Resposta inválida. Por favor, responda com 'sim' ou 'não'.");
+                }
+            }
+
+            // Exibindo a lista de compras
+            let mensagem = "Lista de compras:\n";
+            for (let categoria in listaDeCompras) {
+                mensagem += `  ${categoria}: ${listaDeCompras[categoria].join(", ") || "Nenhum item"}\n`;
+            }
+
+            alert(mensagem);
+        }
+    </script>
+</body>
+</html>
 
